@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+    <title>Black Box Movies</title>
+    <link rel="stylesheet" href="index2.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <button type="button" class="forwardbtn" onclick="showNextMovie()">></button>
+    <button type="button" class="backwardbtn" onclick="showPreviousMovie()"><</button>
+
+    <button type="button" class="logout" onclick="navigateToPage()">Logout</button>
+
+    <input type="text" id="searchBar" placeholder="Search for a movie...">
+    <button id="searchbtn" onclick="searchMovie()">Search</button>
+
+
+    <div id="black-box">
+        <h1>Black Box Movies</h1>
+    </div>
+    <i class='bx bxs-camera-movie'></i>
+
+
+    <div id="movieContainer"> 
+
+    </div>
+
+    <div id="TitleYear"> 
+        
+    </div>
+
+    <div id="movieDetails">
+
+    </div>
+
+
+    <script src = "index2.js"> </script>
+</body>
+</html>
