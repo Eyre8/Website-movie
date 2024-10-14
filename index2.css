@@ -175,6 +175,24 @@ i {
     animation: fade-down 0.5s;
 }
 
+.share {
+    position: absolute;
+    top: 92%;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    color: whitesmoke;
+    background: black;
+    right: 78%;
+    border: solid 2px white;
+    animation: fade-up 0.5s;
+}
+
+.share:hover {
+    background-color: gray;
+    color: black;
+}
+
 #TitleYear {
     position: absolute;
     top: 30%;
