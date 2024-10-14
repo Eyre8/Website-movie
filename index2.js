@@ -121,5 +121,11 @@ function shareMovie() {
         body: JSON.stringify(message),
         mode: 'no-cors'
     })
+    .then(response => {
+        if (!response.ok) {
+            alert("Movie successfully shared!");
+        }
+    })
+    .catch(error => console.error('Error:', error))
 }
 fetchMovies();
