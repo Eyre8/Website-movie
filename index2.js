@@ -78,4 +78,48 @@ function showPreviousMovie() {
     showMovie(currentIndex, "left");
 }
 
+function shareMovie() {
+    const movie = movies[currentIndex];
+
+    const webhookUrl = 'https://mseufeduph.webhook.office.com/webhookb2/8ef714f6-81de-4b42-ad2e-c262d5ce04d1@ddedb3cc-596d-482b-8e8c-6cc149a7a7b7/IncomingWebhook/9ef0b875219140eb8135437505a9d31c/e0510d66-17c3-43f4-a3ef-0cf6a6fba189/V24duT1GXj0kuDCkgbXHPSG6tCe2ZunOnaM30gWrZrYuo1';
+
+    const message = {
+        "@type": "MessageCard",
+        "@context": "https://schema.org/extensions",
+        "summary": "Black Box Movie Share",
+        "sections": [
+            {
+                "activityTitle": `${movie.title}`,
+                "activitySubtitle": `${movie.genre}`,
+                "activityText": `${movie.description}`,
+                "images": [
+                    {
+                        "image": movie.poster,
+                        "title": `${movie.title}`
+                    }
+                ],
+                "facts": [
+                    {
+                        "name": "Running Time",
+                        "value": `${movie.runningTime}`
+                    },
+                    {
+                        "name": "Year",
+                        "value": `${movie.year}`
+                    }
+                ]
+            }
+        ]
+    };
+    
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message),
+        mode: 'no-cors'
+    })
+}
 fetchMovies();
